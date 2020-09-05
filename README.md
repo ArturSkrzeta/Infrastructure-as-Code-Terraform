@@ -30,3 +30,12 @@
   </li>
 </ul>
 
+<h3>Configuration file</h3>
+<ul>
+  <li>Defining provider, resource and its attributes</li>
+</ul>
+
+
+
+
+
