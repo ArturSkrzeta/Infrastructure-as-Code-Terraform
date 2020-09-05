@@ -13,11 +13,13 @@
     - TF-config: defininig what needs to be creatred or provisioned. <br>
     - State: tracks up-to-date state of current infrastructure setup.
   </li>
+  <br>
   <li>Both inputs goes to CORE
     <br>
     - it figures out the plan of what needs to be done to get the desired state
     - compares current state agains the desired one degined in config file
   </li>
+  <br>
   <li>Providers for a specific technology participate in plan execution:
     <br>
     - IaaS  - Infrastructre as a Service   - AWS / Azure <br>
