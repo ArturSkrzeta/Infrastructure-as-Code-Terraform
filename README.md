@@ -18,27 +18,13 @@
     - it figures out the plan of what needs to be done to get the desired state
     - compares current state agains the desired one degined in config file
   </li>
-  <li>Providers giving their resources:
+  <li>Providers for a specific technology participate in plan execution:
     <br>
     - IaaS  - Infrastructre as a Service   - AWS / Azure <br>
     - PasS  - Platform as a Service        - Kubernetes <br>
     - SaaS  - Software as a Service        - Fastly <br>
     - providers can build up the infrastructure on different levels, f.e.: AWS, Kubernetes on top and Service inside cluster <br>
+    - providers gives thei resources: having AWS as the provider you get access to f.e. EC2 instances, AWS USers etc.
   </li>
 </ul>
-
-
-creating Virtual Private Cloud
-spinning up servers
-creating AWS users and permission
-install Docker
-
-docker containers
-db containers
-aws platofrm
-private network space
-ec2 server instances
-security
-
-
 
