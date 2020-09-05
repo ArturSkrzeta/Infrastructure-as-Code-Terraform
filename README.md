@@ -32,7 +32,9 @@
 
 <h3>Configuration file</h3>
 <ul>
-  <li>Defining provider, resource and its attributes</li>
+  <li>Defining provider, resource and its attributes.</li>
+  <li>When updating infrastructure, only thing is to adjust current config file and re-execute it.</li>
+  <li>It alwyas reflects the current setup of infrastructure.</li>
 </ul>
 
 
