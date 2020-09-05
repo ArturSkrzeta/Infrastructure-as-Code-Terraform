@@ -18,13 +18,12 @@
     - it figures out the plan of what needs to be done to get the desired state
     - compares current state agains the desired one degined in config file
   </li>
-  <li>Providers:
+  <li>Providers giving their resources:
     <br>
     - IaaS  - Infrastructre as a Service   - AWS / Azure <br>
     - PasS  - Platform as a Service        - Kubernetes <br>
     - SaaS  - Software as a Service        - Fastly <br>
-    <br>
-    - providers can build up the infrastructure on different levels, f.e.: AWS, Kubernetes on top and Service inside cluster
+    - providers can build up the infrastructure on different levels, f.e.: AWS, Kubernetes on top and Service inside cluster <br>
   </li>
 </ul>
 
