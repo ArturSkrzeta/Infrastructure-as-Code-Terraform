@@ -41,8 +41,14 @@
 <ul>
   <li>refresh - querys infrastructure provider to get current state</li>
   <li>plan - creates an execution plan</li>
-  <li>apply - executes plan - checks what is currently running and creates the plan of what needs to be updated/created</li>
-  <li>destroy - destorys infrastructure - checks what is currently running and creates the plan of what needs to be removed in which order</li>
+  <li>apply - executes plan
+    <br>
+    - checks what is currently running and creates the plan of what needs to be updated/created
+  </li>
+  <li>destroy - destorys infrastructure 
+    <br>
+    - checks what is currently running and creates the plan of what needs to be removed in which order
+  </li>
 </ul>
 
 
