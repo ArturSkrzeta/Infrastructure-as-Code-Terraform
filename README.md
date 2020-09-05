@@ -53,7 +53,7 @@
 
 <h3>Terraform installation</h3>
 <ul>
-  <li>...</li>
+  <img src="images/installation.JPG">
 </ul>
 
 
