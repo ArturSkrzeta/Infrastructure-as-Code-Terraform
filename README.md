@@ -16,7 +16,7 @@
   <br>
   <li>Both inputs goes to CORE
     <br>
-    - it figures out the plan of what needs to be done to get the desired state
+    - it figures out the plan of what actions are necessary to achieve desired state <br>
     - compares current state agains the desired one degined in config file
   </li>
   <br>
@@ -36,6 +36,16 @@
   <li>When updating infrastructure, only thing is to adjust current config file and re-execute it.</li>
   <li>It alwyas reflects the current setup of infrastructure.</li>
 </ul>
+
+<h3>Terraform commands</h3>
+<ul>
+  <li>refresh - querys infrastructure provider to get current state</li>
+  <li>plan - creates an execution plan</li>
+  <li>apply - executes plan - checks what is currently running and creates the plan of what needs to be updated/created</li>
+  <li>destroy - destorys infrastructure - checks what is currently running and creates the plan of what needs to be removed in which order</li>
+</ul>
+
+
 
 
 
