@@ -1,10 +1,48 @@
 <h2>Infrastructure as Code Terraform</h2>
 <p>Terraform allows to automate and manage the infrastructure for an application or platform and services that run on that platform.</p>
-<h3>Intro</h3>
-<ul>
-  <li>It's declarative - you define WHAT you want as opposed to impreative style where you need to specify each step on HOW to do it.</li>
-  <li>Easy for spinning infrastructure up for replicating development environment into production environment.</li>
-</ul>
+
+3 main tasks:
++ infra provisioning
++ configuring provisioned infra 
++ deploying app
++ with docker, configuration and deployment is combined togther as we have configuration in the docker image itself
+
+Iaac:
++ provisionging and deprovisioning the cloud infrastructure
++ Pulumi - Modern Infrastructure as Code
+
+Terraform:
++ configuration file and stat file to provision infrastrucutre resources
++ implicit dependecy - we don't have to keep order of resources in the code - with explicit dependency we create resource one after another is ready and setup
++ code in .tf file - to provision and manage infrastructure 
++ hashey corp configuration language with .tf extension:
++ devlarative language - we descibe de desired aws state -  we give a blueprint on how the infrastructure should look like at the end
++ actual state in AWS matches what is being defined in the terraform code
++ terraform plan - to see what is the current status of aws
++ terraform apply --auto-approve    - deploying terraform code
++ when doploying the same code - terrafotm checks what is the current state, compers code with aws, finds what is missing in the aws then updates the missing parts
++ terraform destroy - but in order to remove from aws - we can simply remove the code from terraform file then as there is nothing in the code - terraform removes aws instances as well
++ we can reference resoueces that wasn't instantiated in the aws yet in the code - that is why we have the resource names - for terafform usage/references
++ the sequence of the code doesn't matter: we can either first put vpc and then subnet or the other way around
++ whenewer we update aws with terraform we update .tfstate fale within a project as well - this file reflecst current status in AWS - it also tracks all the dependencies between resources - it's a good practice to share this file with the team
++ we can keep variables in varaibles.tf and call them out in main.tf - if no type of variable declared then it assigns 'any'
++ output variables are good to diaplu details about provision resource on the screen
++ terraform validate - this command checks code's syntax validity
++ terraform show - showing all infrastructure that terraform sees
++ noramlly when terraform update a resource - at first it deletes resource and the creates it with an updated configuration - we can change it with declaring a lifecycle within resourc's parameters
++ we can indicate which parameters can be ingored within lifecycle by ignore_changes key word
++ other tools for provisioning infrastructre: pupper, cloud formation, ansible
++ loading resources (data resource) outside the control of terraform: data block data "local_file " fie_nem { filename = "..." } - it can be referred in resource block -> content = data.local_file.file_name.content
++ meta arguments can be used within a resource block for example for_each - creates resurces as a map - count argument creatres resources as a list
++ mitable infrastructure (changing existing resource) - immutable infrastructure (destroying old resource and creating a new one, always replace instead of changing)
+
+Ansible:
++ configuration management tool
++ procedural and declerative
++ managing resources that are already created
++ execution from top to bottom like a procedural code - explicit dependency
++ no lifecycle management / no state kept in memory of a current infrastructure
++ terraform to provision and configure infrastrucutre - ansible to install and deploy applications
 
 <h3>Terraform architecture</h3>
 <ul>
