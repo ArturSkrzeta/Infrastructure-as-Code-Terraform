@@ -1,7 +1,9 @@
 <h2>Infrastructure as Code Terraform</h2>
 <p>Terraform allows to automate and manage the infrastructure for an application or platform and services that run on that platform.</p>
 
-3 main tasks:
+DevOps - - - - - - - - - - - - 
+
+3 main DevOps tasks:
 + infra provisioning
 + configuring provisioned infra 
 + deploying app
@@ -10,6 +12,15 @@
 Iaac:
 + provisionging and deprovisioning the cloud infrastructure
 + Pulumi - Modern Infrastructure as Code
++ automatyzacja poprzez przenoszenie kodu do innego srodowiska
++ disaster recovery (duplikowanie identycznych srodowisk)
++ zarzadzanie infrastruktura jak aplikacjami
++ przetestowanie infrastruktury
++ monitorownie stanu infrastruktury
++ przywrocanie infrastruktury do tego jako poiwnien byc pierwotnie w kodzie
++ jak robimy recznie bledy beda prawdopdobienstwo w odp dlugim czasie zmierza do 1
++ odtwarzalnosc infrastruktury - nawet jak sa roznice to jest kwestia wprowadzenia odpowiednich zmiennych do dobrze przygotowanego kodu
++ terraform zapewnia idempotentnosc - cecha metody ktora zapewnia, ze obojetnie ile razy uzyjemy tej metody, to rezultat mamy taki sam - jesli jeszcze raz uruchomimy infrastrukry, to kod za zadanie sprawdzic czy jest jako powinno byc i ewetualnie wycofac pewne zmainy do pierwotnego stanu zadanego pierwotnie przez kod
 
 Terraform:
 + configuration file and stat file to provision infrastrucutre resources
@@ -35,6 +46,27 @@ Terraform:
 + loading resources (data resource) outside the control of terraform: data block data "local_file " fie_nem { filename = "..." } - it can be referred in resource block -> content = data.local_file.file_name.content
 + meta arguments can be used within a resource block for example for_each - creates resurces as a map - count argument creatres resources as a list
 + mitable infrastructure (changing existing resource) - immutable infrastructure (destroying old resource and creating a new one, always replace instead of changing)
++ infra provisioning: creating VPC, spin up EC2 servers, creating AWS users with permissions, installing docker
++ along with ansible for provisioning (better terraform), configuring (better ansible) and managing infrastructure
++ declarative is much better when updating infrastructure: we say what we need and it figures out how to update, in imperative we would need to explicitly instruct on rmoving resources, adding  permissions all over again
++ with declarative approach configuration file stays clean and samll but also we can see what is the current state of infrastrucutre just by looking on the config file
++ state is in json file - automatically created locally when terraform apply - should be stored in shared remote stage for the team
++ locking the stat file until an update is fully completed and unlock it for the next command for example s3 supportd stat locing and consistency checking via dynamodb
++ enabling versioning in s3 for state file - version of state changes and backup
++ using one state file per environemt - each file have his own storage backend
++ it's good to keep config file in the git repo like app code - sharing with team and keeping track of changes - testing and reviewing code
++ applying changfes with trerraform only through cd pipeline - single location from which all infrastructure changes happen - more streamlined process of updated infra
+Terraform PL:
++ daje obraz infrastruktury w kodzie
++ uzywa api róznych dostawcow
++ mozna przejrzec plan dzialan
++ relizuje odtwarzalna infrastryukture
++ tworzenie systemów heterogenicznych - mozemy stowrzyc infra zlozona od roznych dostawcow
++ json - nie ma komentarzy
++ HCL - HashiCorp Configuration Language - poprawiony json - mozemy konvertowac jsona w hcl ale nie da sie w druga strone
++ sklada sie z resources, varaiables i outputs npa otuput "xxx" { value = "${aws_instance.wb.public_ip}" }
++ state plik moze tez byc zrodlem danych dla innej infrastruktury (data source)
++ zdalny stan terraforma z mechinizmem lockingu
 
 Ansible:
 + configuration management tool
