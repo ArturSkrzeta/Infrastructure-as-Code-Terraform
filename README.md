@@ -76,6 +76,16 @@ Ansible:
 + no lifecycle management / no state kept in memory of a current infrastructure
 + terraform to provision and configure infrastrucutre - ansible to install and deploy applications
 
+Installation and executing:
+1. Dwonloading  terraform.exe and pasting to C drive
+2. Adding Path to system variables
+3. create new project
+4. create main.tf
+5. terraform init
+6. terraform plan
+7. terraform apply
+
+
 <h3>Terraform architecture</h3>
 <ul>
   <li>2 input sources:
