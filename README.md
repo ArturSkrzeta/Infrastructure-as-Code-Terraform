@@ -85,6 +85,13 @@ Installation and executing:
 6. terraform plan
 7. terraform apply
 
+<code>
+ resource "local_file" "pet" {
+    filename = "./test.txt"
+    content = "test content"
+}
+ </code>
+
 
 <h3>Terraform architecture</h3>
 <ul>
