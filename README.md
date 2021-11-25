@@ -86,9 +86,9 @@ Installation and executing:
 7. terraform apply
 
 <code>
- resource "local_file" "pet" {
-    filename = "./test.txt"
-    content = "test content"
+ resource "local_file" "pet" {<br>
+    filename = "./test.txt"<br>
+    content = "test content"<br>
 }
  </code>
 
